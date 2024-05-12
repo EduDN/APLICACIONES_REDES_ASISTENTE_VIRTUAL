@@ -30,8 +30,7 @@ if uploaded_file and question and anthropic_api_key:
         article = uploaded_file.read().decode()
 
     prompt = f"""{anthropic.HUMAN_PROMPT} Here's an article:\\n\\n<article>
-    {article}\\n\\n</article>\\n\\n{question}{anthropic.AI_PROMPT},reply
-    on spanish and be concise in your answers"""
+    {article}\\n\\n</article>\\n\\n{question}{anthropic.AI_PROMPT}"""
 
     client = anthropic.Client(api_key=anthropic_api_key)
     response = client.completions.create(
